@@ -417,3 +417,135 @@ additional_bom_items:
 [Source](tutorial08.yml) - [Bill of Materials](tutorial08.bom.tsv)
 
 
+![](tutorial09.png)
+
+[Source](tutorial09.yml) - [Bill of Materials](tutorial09.bom.tsv)
+## 09 - Hidden wire information and using a template for nice display as a DIN6771 document 
+
+* Sometimes the box around the wire will be distrating
+  * unfurtionaly some fields can not (yet) be suppressed:
+      # length
+      # gauge
+      # color_code
+      # manufacturer
+      # mpn
+      # supplier
+      # spn
+      # pn
+* Formatting the end result in a DIN-6771 template makes for a very nice result.
+  * using a template ensures all your wiring diagrams will have a uniform look
+  * the template can be found at: /home/[USER]/.local/lib/python3.10/site-packages/wireviz/templates/din-6771.html 
+
+
+* Ad an image to your connector (or wire)
+
+```yaml
+connectors:
+  X1: &template1 # define a template for later use
+    type: Molex KK 254
+    pincount: 4
+    subtype: female
+    # manufacturer: '<a href="https://www.molex.com/">Molex</a>' # set manufacter name
+    # mpn: '<a href="https://www.molex.com/molex/products/part-detail/crimp_housings/0022013047">22013047</a>' # set manufacturer part number
+    # supplier: Digimouse
+    # spn: 1234
+    image:
+      src: MolexKK254.jpg
+    # add a list of additional components to a part (shown in graph)
+    additional_components:
+      - type: Crimp # short identifier used in graph
+        subtype: Molex KK 254, 22-30 AWG # extra information added to type in bom
+        qty_multiplier: populated # multipier for quantity (number of populated pins)
+        manufacturer: Molex # set manufacter name
+        mpn: 08500030 # set manufacturer part number
+      - type: Test
+        qty: 1
+        pn: ABC
+        manufacturer: Molex
+        mpn: 45454
+        supplier: Mousikey
+        spn: 9999
+  X2:
+    <<: *template1 # reuse template
+    pn: CON4 # set an internal part number for just this connector
+  X3:
+    <<: *template1 # reuse template
+
+cables:
+  W1:
+    wirecount: 4
+    length: 1
+    gauge: 0.25 mm2
+    color_code: IEC
+    manufacturer: CablesCo
+    mpn: ABC123
+    supplier: Cables R Us
+    spn: 999-888-777
+    pn: CAB1
+    #############
+    show_name: false
+    show_wirecount: false     
+    show_wirenumbers: false
+    #############
+  W2:
+    category: bundle
+    length: 1
+    gauge: 0.25 mm2
+    colors: [YE, BK, BK, RD]
+    manufacturer: [WiresCo, WiresCo, WiresCo, WiresCo] # set a manufacter per wire
+    mpn: [W1-YE, W1-BK, W1-BK, W1-RD]
+    supplier: [WireShack, WireShack, WireShack, WireShack]
+    spn: [1001, 1002, 1002, 1009]
+    pn: [WIRE1, WIRE2, WIRE2, WIRE3]
+    # add a list of additional components to a part (shown in graph)
+    additional_components:
+      - type: Sleve # short identifier used in graph
+        subtype: Braided nylon, black, 3mm # extra information added to type in bom
+        qty_multiplier: length # multipier for quantity (length of cable)
+        unit: m
+        pn: SLV-1
+
+connections:
+  - - X1: [1-4]
+    - W1: [1-4]
+    - X2: [1-4]
+  - - X1: [1-4]
+    - W2: [1-4]
+    - X3: [1-4]
+   #############
+tweak:
+  override:
+    graph:
+      ranksep: "0.5"  # Reduce the horizontal spacing (default 2)
+    wireTweak: &wireTweak
+      shape: none  # Hide the surrounding frame
+      fontsize: "12"  # Reduce the space needed for text
+      fontcolor: white  # Same as background to hide the text
+
+    W1:  
+      <<: *wireTweak 
+  ###############    
+
+  ###### the din template, A4 format
+  metadata: &metadata 
+  title: Power supplies
+  pn: PSU
+
+  authors:
+    Created:
+      name: Ton
+      date: 2025-03-11
+    Approved:
+      name: Ton
+      date: 2025-03-11
+
+  revisions:
+    A:
+      name: Ton
+      date: 2025-03-12
+      changelog: updates]
+
+  template:
+    name: din-6771    
+    sheetsize: A4
+```
