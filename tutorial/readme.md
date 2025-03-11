@@ -437,7 +437,7 @@ additional_bom_items:
 * Ad an image to your connector (or wire)
 
 {{tutorial09.yml}}
-
+https://github.com/snelweg/WireViz/blob/892d2b0f29d39b6ef13790c40c23c6d586d6ce73/tutorial/tutorial09.yml
 ```yaml
 connectors:
   X1: &template1 # define a template for later use
