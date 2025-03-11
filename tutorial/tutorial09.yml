@@ -85,8 +85,6 @@ tweak:
       shape: none  # Hide the surrounding frame
       fontsize: "12"  # Reduce the space needed for text
       fontcolor: white  # Same as background to hide the text
-    X1:  
-      <<: *wireTweak 
       ## W1 uses the gauge and length field, they can not be suppressed at the moment. There was an issue #221
     W1:  
       <<: *wireTweak 
