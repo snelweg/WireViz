@@ -419,24 +419,26 @@ additional_bom_items:
 
 ## 09 - Hidden wire information and using a template for nice display as a DIN6771 document 
 
+What will this 'tutorial' show you?
+
+##Hidden wire information
 * Sometimes the box around the wire will be distrating
   * unfurtionaly some fields can not (yet) be suppressed:
-      # length
-      # gauge
-      # color_code
-      # manufacturer
-      # mpn
-      # supplier
-      # spn
-      # pn
+       length
+       gauge
+       color_code
+       manufacturer
+       mpn
+       supplier
+       spn
+       pn
+##Nice uniform template       
 * Formatting the end result in a DIN-6771 template makes for a very nice result.
   * using a template ensures all your wiring diagrams will have a uniform look
   * the template can be found at: /home/[USER]/.local/lib/python3.10/site-packages/wireviz/templates/din-6771.html 
+##Adding images to your components
+* Add an image to your connector (or wire)
 
-
-* Ad an image to your connector (or wire)
-
-{{tutorial09.yml}}
 
 ```yaml
 connectors:
@@ -444,10 +446,10 @@ connectors:
     type: Molex KK 254
     pincount: 4
     subtype: female
-    # manufacturer: '<a href="https://www.molex.com/">Molex</a>' # set manufacter name
-    # mpn: '<a href="https://www.molex.com/molex/products/part-detail/crimp_housings/0022013047">22013047</a>' # set manufacturer part number
-    # supplier: Digimouse
-    # spn: 1234
+    manufacturer: '<a href="https://www.molex.com/">Molex</a>' # set manufacter name
+    mpn: '<a href="https://www.molex.com/molex/products/part-detail/crimp_housings/0022013047">22013047</a>' # set manufacturer part number
+    supplier: Digimouse
+    spn: 1234
     image:
       src: MolexKK254.jpg
     # add a list of additional components to a part (shown in graph)
@@ -467,20 +469,26 @@ connectors:
   X2:
     <<: *template1 # reuse template
     pn: CON4 # set an internal part number for just this connector
+    subtype: male
+    image:
+      src: MolexKK254MALE.jpg
+
   X3:
     <<: *template1 # reuse template
-
+    subtype: male
+    image:
+      src: MolexKK254MALE.jpg
 cables:
   W1:
     wirecount: 4
-    length: 1
-    gauge: 0.25 mm2
-    color_code: IEC
-    manufacturer: CablesCo
-    mpn: ABC123
-    supplier: Cables R Us
-    spn: 999-888-777
-    pn: CAB1
+    # length: 1
+    # gauge: 0.25 mm2
+    # color_code: IEC
+    # manufacturer: CablesCo
+    # mpn: ABC123
+    # supplier: Cables R Us
+    # spn: 999-888-777
+    # pn: CAB1
     #############
     show_name: false
     show_wirecount: false     
@@ -520,13 +528,15 @@ tweak:
       shape: none  # Hide the surrounding frame
       fontsize: "12"  # Reduce the space needed for text
       fontcolor: white  # Same as background to hide the text
-
+    X1:  
+      <<: *wireTweak 
+      ## W1 uses the gauge and length field, they can not be suppressed at the moment. There was an issue #221
     W1:  
       <<: *wireTweak 
   ###############    
 
-  ###### the din template, A4 format
-  metadata: &metadata 
+###### the din template, A4 format
+metadata: 
   title: Power supplies
   pn: PSU
 
