@@ -417,9 +417,6 @@ additional_bom_items:
 [Source](tutorial08.yml) - [Bill of Materials](tutorial08.bom.tsv)
 
 
-![](tutorial09.png)
-
-[Source](tutorial09.yml) - [Bill of Materials](tutorial09.bom.tsv)
 ## 09 - Hidden wire information and using a template for nice display as a DIN6771 document 
 
 * Sometimes the box around the wire will be distrating
@@ -438,6 +435,8 @@ additional_bom_items:
 
 
 * Ad an image to your connector (or wire)
+
+{{tutorial09.yml}}
 
 ```yaml
 connectors:
@@ -549,3 +548,7 @@ tweak:
     name: din-6771    
     sheetsize: A4
 ```
+
+![](tutorial09.png)
+
+[Source](tutorial09.yml) - [Bill of Materials](tutorial09.bom.tsv)
