@@ -4,19 +4,19 @@
 
 [02 - Adding parameters and colors](#02---adding-parameters-and-colors)
 
-[03 - Pinouts, shielding, templates (I)](03---pinouts,-shielding,-templates-(I))
+[03 - Pinouts, shielding, templates (I)](03---pinouts-shielding-templates-(I))
 
 [04 - Templates (II), notes, American standards, daisy chaining (I)](04---templates-(II),-notes,-american-standards,-daisy-chaining-(I))
 
-[05 - Ferrules, wire bundles, custom wire colors](05---Ferrules,-wire-bundles,-custom-wire-colors)
+[05 - Ferrules, wire bundles, custom wire colors](05---ferrules,-wire-bundles,-custom-wire-colors)
 
-[06 - Custom ferrules](06---Custom-ferrules)
+[06 - Custom ferrules](06---custom-ferrules)
 
-[07 - Daisy chaining (II)](07---Daisy-chaining-(II))
+[07 - Daisy chaining (II)](07---daisy-chaining-(II))
 
-[08 - Part numbers and additional components](08---Part-numbers-and-additional-components)
+[08 - Part numbers and additional components](08---part-numbers-and-additional-components)
 
-[09 - Hidden wire information and using a template for nice display as a DIN6771 document](09---Hidden-wire-information-and-using-a-template-for-nice-display-as-a-DIN6771-document)
+[09 - Hidden wire information and using a template for nice display as a DIN6771 document](09---hidden-wire-information-and-using-a-template-for-nice-display-as-a-din6771-document)
 
 
 ## 01 - Bare-bones example
