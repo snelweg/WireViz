@@ -1,9 +1,9 @@
 # WireViz Tutorial
 
 ## [01 - Bare-bones example](#01---Bare-bones-example)
-## [02 - Adding parameters and colors](#02---Adding-parameters-and-colors)
-## [03 - Pinouts, shielding, templates (I)](03---Pinouts,-shielding,-templates-(I))
-## [04 - Templates (II), notes, American standards, daisy chaining (I)](04---Templates-(II),-notes,-American-standards,-daisy-chaining-(I))
+## [02 - Adding parameters and colors](#02---adding-parameters-and-colors)
+## [03 - Pinouts, shielding, templates (I)](03---pinouts,-shielding,-templates-(I))
+## [04 - Templates (II), notes, American standards, daisy chaining (I)](04---templates-(II),-notes,-american-standards,-daisy-chaining-(I))
 ## [05 - Ferrules, wire bundles, custom wire colors](05---Ferrules,-wire-bundles,-custom-wire-colors)
 ## [06 - Custom ferrules](06---Custom-ferrules)
 ## [07 - Daisy chaining (II)](07---Daisy-chaining-(II))
