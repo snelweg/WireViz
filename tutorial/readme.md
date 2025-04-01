@@ -6,7 +6,7 @@
 
 [03 - Pinouts, shielding, templates (I)](#03---pinouts-shielding-templates-(I))
 
-[04 - Templates (II), notes, American standards, daisy chaining (I)](04---templates-II-notes-american-standards-daisy-chaining-I)
+[04 - Templates (II), notes, American standards, daisy chaining (I)](#04---templates-(II)-notes-american-standards-daisy-chaining-(I))
 
 [05 - Ferrules, wire bundles, custom wire colors](#05---ferrules,-wire-bundles,-custom-wire-colors)
 
@@ -16,7 +16,7 @@
 
 [08 - Part numbers and additional components](#08---part-numbers-and-additional-components)
 
-[09 - Hidden wire information and using a template for nice display as a DIN6771 document](#09---hidden-wire-information-and-using-a-template-for-nice-display-as-a-din6771-document)
+[09 - Hidden wire information and using a template for nice display](#09---hidden-wire-information-and-using-a-template-for-nice-display-as-a-din6771-document)
 
 
 ## 01 - Bare-bones example
@@ -440,9 +440,10 @@ additional_bom_items:
 
 What will this 'tutorial' show you?
 
-##Hidden wire information
-* Sometimes the box around the wire will be distrating
-  * unfurtionaly some fields can not (yet) be suppressed:
+## Hide wire information
+
+* Sometimes the box around the wire will be distracting
+  * unfortunately some fields can not (yetd) be suppressed:
        length
        gauge
        color_code
@@ -451,19 +452,21 @@ What will this 'tutorial' show you?
        supplier
        spn
        pn
-##Nice uniform template       
+
+## Nice uniform template       
+
 * Formatting the end result in a DIN-6771 template makes for a very nice result.
   * using a template ensures all your wiring diagrams will have a uniform look
-  * the template can be found at: /home/[USER]/.local/lib/python3.10/site-packages/wireviz/templates/din-6771.html 
-##Adding images to your components
-* Add an image to your connector (or wire)
+  * the template can be found at: 
+    /home/[USER]/.local/lib/python3.10/site-packages/wireviz/templates/din-6771.html 
+
+##  Adding images to your components
+* Add an image to your component
 
 
 ```yaml
+<!-- include(tutorial09.yml) -->
 
-
-<!-- include (tutorial09.yml) -->
-<!-- /include (tutorial09.yml) -->
 ```
 
 ![](tutorial09.png)
