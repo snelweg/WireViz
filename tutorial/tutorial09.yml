@@ -63,7 +63,7 @@ cables:
     pn: [WIRE1, WIRE2, WIRE2, WIRE3]
     # add a list of additional components to a part (shown in graph)
     additional_components:
-      - type: Sleve # short identifier used in graph
+      - type: Sleeve # short identifier used in graph
         subtype: Braided nylon, black, 3mm # extra information added to type in bom
         qty_multiplier: length # multipier for quantity (length of cable)
         unit: m
